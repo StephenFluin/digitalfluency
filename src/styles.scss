@@ -1,1 +1,136 @@
-/* You can add global styles to this file, and also import other style files */
+:root {
+  color-scheme: light dark;
+  --page-background: #ffffff;
+  --surface-background: #f5f6f7;
+  --band-background: #3e4346;
+  --header-background: #0d0f10;
+  --text-color: #383f49;
+  --muted-text-color: #59626d;
+  --link-color: #005a8c;
+  --link-hover-color: #003b5c;
+  --border-color: rgba(0, 0, 0, 0.1);
+  --footer-background: #2b3035;
+  --footer-text: #dde1e6;
+  --footer-link: #b3dbff;
+  --max-width: 1100px;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --page-background: #15181b;
+    --surface-background: #1f2428;
+    --text-color: #dde1e6;
+    --muted-text-color: #a3acb6;
+    --link-color: #7cc4ff;
+    --link-hover-color: #b3dbff;
+    --border-color: rgba(255, 255, 255, 0.14);
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family:
+    Montserrat,
+    Inter,
+    -apple-system,
+    'Segoe UI',
+    Helvetica,
+    Arial,
+    sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--text-color);
+  background-color: var(--page-background);
+}
+
+h1,
+h2,
+h3 {
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+h2 {
+  font-size: 28px;
+  margin: 32px 0 16px;
+  display: flex;
+  align-items: center;
+}
+
+h2::after {
+  content: '';
+  border-top: 1px solid var(--border-color);
+  margin-left: 20px;
+  flex: 1 0 20px;
+}
+
+a {
+  color: var(--link-color);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--link-hover-color);
+  text-decoration: underline;
+}
+
+:focus-visible {
+  outline: 3px solid var(--link-color);
+  outline-offset: 2px;
+}
+
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.band {
+  background: var(--band-background);
+  color: #f5f6f7;
+  padding: 56px 0;
+
+  h1 {
+    font-size: clamp(36px, 6vw, 64px);
+    margin: 0 0 16px;
+    color: rgba(255, 255, 255, 0.95);
+  }
+
+  p {
+    max-width: 46em;
+    margin: 0 0 12px;
+  }
+}
+
+.legal {
+  max-width: 50em;
+  padding-top: 8px;
+  padding-bottom: 48px;
+  line-height: 1.75;
+}
+
+.card {
+  background: var(--surface-background);
+  border: 1px solid var(--border-color);
+  border-radius: 3px;
+  padding: 24px;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
