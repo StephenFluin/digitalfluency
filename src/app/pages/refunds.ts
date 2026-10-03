@@ -17,8 +17,13 @@ import { COMPANY } from '../company';
 
       <h2>Refunds</h2>
       <p>
-        If you are not satisfied, you may request a full refund within 14 days of your initial
-        purchase or most recent renewal. Refund requests after 14 days are reviewed case by case.
+        Our Services incur real costs as they are used, including computing, hosting, and
+        third-party processing fees. For this reason, charges for services already provided,
+        including any billing period that has started, are non-refundable. Cancelling a
+        subscription stops future charges but does not refund the current period.
+      </p>
+      <p>
+        Refunds are issued only for billing errors, such as duplicate or unauthorized charges.
         Approved refunds are issued to the original payment method and typically appear within
         5&ndash;10 business days.
       </p>
