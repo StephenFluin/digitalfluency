@@ -65,7 +65,8 @@ two options to be done manually.
 
 **For SwiftUI Apps (in `AppDelegate.swift`):**
 
-*File: `AppDelegate.swift`*
+_File: `AppDelegate.swift`_
+
 ```swift
 import UIKit
 import FirebaseCore

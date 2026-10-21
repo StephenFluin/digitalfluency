@@ -6,21 +6,23 @@ import { COMPANY } from '../company';
   template: `
     <div class="container legal">
       <h1>Refund and Cancellation Policy</h1>
-      <p><em>Effective {{ company.effectiveDate }}</em></p>
+      <p>
+        <em>Effective {{ company.effectiveDate }}</em>
+      </p>
 
       <h2>Cancellation</h2>
       <p>
-        You may cancel a subscription at any time from within the application or by contacting
-        us. After cancellation you keep access until the end of the current billing period, and
-        you will not be charged again.
+        You may cancel a subscription at any time from within the application or by contacting us.
+        After cancellation you keep access until the end of the current billing period, and you will
+        not be charged again.
       </p>
 
       <h2>Refunds</h2>
       <p>
         Our Services incur real costs as they are used, including computing, hosting, and
         third-party processing fees. For this reason, charges for services already provided,
-        including any billing period that has started, are non-refundable. Cancelling a
-        subscription stops future charges but does not refund the current period.
+        including any billing period that has started, are non-refundable. Cancelling a subscription
+        stops future charges but does not refund the current period.
       </p>
       <p>
         Refunds are issued only for billing errors, such as duplicate or unauthorized charges.
@@ -30,8 +32,8 @@ import { COMPANY } from '../company';
 
       <h2>Billing Errors</h2>
       <p>
-        If you believe you were charged in error, contact us and we will investigate and correct
-        any mistake promptly.
+        If you believe you were charged in error, contact us and we will investigate and correct any
+        mistake promptly.
       </p>
 
       <h2>How to Request a Refund</h2>

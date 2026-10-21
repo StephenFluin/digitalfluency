@@ -19,7 +19,9 @@ import { COMPANY, PRODUCTS } from '../company';
         <p>{{ product.summary }}</p>
         <dl>
           <dt>Website</dt>
-          <dd><a [href]="product.url">{{ product.url }}</a></dd>
+          <dd>
+            <a [href]="product.url">{{ product.url }}</a>
+          </dd>
           <dt>Pricing and billing</dt>
           <dd>{{ product.billing }}</dd>
           <dt>Delivery</dt>
@@ -34,8 +36,8 @@ import { COMPANY, PRODUCTS } from '../company';
       <p>
         Charges for these products appear on your statement under {{ company.legalName }} or
         DIGITALFLUENCY. Subscriptions renew automatically until cancelled and can be cancelled at
-        any time from within the application or by <a routerLink="/contact">contacting us</a>.
-        See our <a routerLink="/refunds">Refund Policy</a> for details.
+        any time from within the application or by <a routerLink="/contact">contacting us</a>. See
+        our <a routerLink="/refunds">Refund Policy</a> for details.
       </p>
     </div>
   `,

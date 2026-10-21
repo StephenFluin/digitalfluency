@@ -31,7 +31,7 @@ ensure the following is done.
 - **Leverage Coroutines**: Call `.execute()` within a coroutine scope for
   asynchronous operations.
 
-______________________________________________________________________
+---
 
 ## 1. Add dependencies to Gradle build files
 
@@ -88,7 +88,7 @@ Kotlin serialization plugin and the dependency for Firebase SQL Connect:
     }
     ```
 
-______________________________________________________________________
+---
 
 ## 2. Initialize
 
@@ -106,7 +106,7 @@ connector.dataConnect.useEmulator()
 // connector.dataConnect.useEmulator(port = 9999)
 ```
 
-______________________________________________________________________
+---
 
 ## 3. Work with SQL Connect
 
@@ -155,8 +155,8 @@ scenarios.
 ```yaml
 generate:
   kotlinSdk:
-    outputDir: "../android"
-    package: "com.google.firebase.dataconnect.generated"
+    outputDir: '../android'
+    package: 'com.google.firebase.dataconnect.generated'
     clientCache:
       maxAge: 5s
       storage: persistent # Default for Android is persistent

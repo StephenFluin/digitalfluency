@@ -34,8 +34,8 @@ import { COMPANY, PRODUCTS } from '../company';
       <p>
         {{ company.legalName }} owns and operates each of the applications listed above. Customer
         accounts, subscriptions, and payments for these products are managed by
-        {{ company.legalName }}. Payments are processed securely by our payment provider; we do
-        not store full card numbers on our systems.
+        {{ company.legalName }}. Payments are processed securely by our payment provider; we do not
+        store full card numbers on our systems.
       </p>
       <p>
         Questions about a product, a subscription, or a charge on your statement?

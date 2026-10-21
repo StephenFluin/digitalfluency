@@ -10,9 +10,19 @@ import { COMPANY } from '../company';
       <div class="container bar">
         <a class="logo" routerLink="/">{{ company.shortName }}</a>
         <nav aria-label="Primary">
-          <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" ariaCurrentWhenActive="page">Home</a>
-          <a routerLink="/products" routerLinkActive="active" ariaCurrentWhenActive="page">Products</a>
-          <a routerLink="/contact" routerLinkActive="active" ariaCurrentWhenActive="page">Contact</a>
+          <a
+            routerLink="/"
+            routerLinkActive="active"
+            [routerLinkActiveOptions]="{ exact: true }"
+            ariaCurrentWhenActive="page"
+            >Home</a
+          >
+          <a routerLink="/products" routerLinkActive="active" ariaCurrentWhenActive="page"
+            >Products</a
+          >
+          <a routerLink="/contact" routerLinkActive="active" ariaCurrentWhenActive="page"
+            >Contact</a
+          >
         </nav>
       </div>
     </header>

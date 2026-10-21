@@ -6,7 +6,9 @@ import { COMPANY } from '../company';
   template: `
     <div class="container legal">
       <h1>Privacy Policy</h1>
-      <p><em>Effective {{ company.effectiveDate }}</em></p>
+      <p>
+        <em>Effective {{ company.effectiveDate }}</em>
+      </p>
 
       <p>
         This Privacy Policy describes how {{ company.legalName }} ("we", "us") collects, uses, and
@@ -34,9 +36,9 @@ import { COMPANY } from '../company';
 
       <h2>How We Share Information</h2>
       <p>
-        We do not sell your personal information. We share information only with service
-        providers that help us operate the Services (such as hosting, payment processing, and
-        AI model providers), when required by law, or in connection with a business transfer.
+        We do not sell your personal information. We share information only with service providers
+        that help us operate the Services (such as hosting, payment processing, and AI model
+        providers), when required by law, or in connection with a business transfer.
       </p>
 
       <h2>Data Retention and Security</h2>
@@ -49,13 +51,13 @@ import { COMPANY } from '../company';
       <h2>Your Choices</h2>
       <p>
         You may access, update, or request deletion of your account information at any time by
-        contacting us at <a [href]="'mailto:' + company.email">{{ company.email }}</a>.
+        contacting us at <a [href]="'mailto:' + company.email">{{ company.email }}</a
+        >.
       </p>
 
       <h2>Changes</h2>
       <p>
-        We may update this policy from time to time. Changes take effect when posted on this
-        page.
+        We may update this policy from time to time. Changes take effect when posted on this page.
       </p>
     </div>
   `,

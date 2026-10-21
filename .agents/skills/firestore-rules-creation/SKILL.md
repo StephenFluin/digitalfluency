@@ -9,6 +9,7 @@ metadata:
 # Firestore Security Rules Creation
 
 > [!IMPORTANT] **Subagent Delegation vs. Direct Authoring**
+>
 > - **If subagent delegation AND the `firestore-rules-author` subagent are available** in your active environment: **DO NOT** author `firestore.rules` directly in the main agent. Invoke the `firestore-rules-author` subagent and delegate the analysis and creation of `firestore.rules` to it.
 > - **If subagent delegation is unavailable** (e.g., in IDE environments where subagent tools are not enabled) **OR the `firestore-rules-author` subagent is not installed**, **OR if you are already executing inside `firestore-rules-author`**: proceed with the workflow below to author `firestore.rules` directly.
 
@@ -71,7 +72,7 @@ Generate Firebase Security Rules following these principles:
 - **UID Protection:** Prevent users from changing ownership of data
 - **Initially restricted:** Never make any collection or data publicly readable,
   always require authentication for any access to data unless the user makes an
-  *explicit* request for unauthenticated data.
+  _explicit_ request for unauthenticated data.
 
 This means the first firestore.rules file you generate must never have any
 "allow read: true" statements.
@@ -356,12 +357,12 @@ match /users/{userId} {
   pollution. For example, a `tags` array must verify that every item is a string
   AND that each string is within a reasonable length (e.g., < 20 chars).
 
--   **Permission-Field Lockdown:** Fields that control access (e.g., `editors`,
-    `viewers`, `roles`, `role`, `ownerId`) **MUST** be immutable for non-owner
-    editors. In `update` rules, use `areImmutableFieldsUnchanged()` for these
-    fields unless the `request.auth.uid` matches the document's original
-    owner/creator. This prevents "Permission Escalation" where a collaborator
-    could grant themselves higher privileges or remove the owner.
+- **Permission-Field Lockdown:** Fields that control access (e.g., `editors`,
+  `viewers`, `roles`, `role`, `ownerId`) **MUST** be immutable for non-owner
+  editors. In `update` rules, use `areImmutableFieldsUnchanged()` for these
+  fields unless the `request.auth.uid` matches the document's original
+  owner/creator. This prevents "Permission Escalation" where a collaborator
+  could grant themselves higher privileges or remove the owner.
 
 ### Advanced Validation for Business Logic
 
@@ -432,7 +433,7 @@ has not already performed the action (e.g., by checking for the existence of a
 'like' document) and is not looping updates. * **CRITICAL:** Relying solely on
 `!exists(likeDoc)` is insufficient because a malicious user can skip creating
 the document and loop the increment. * **SOLUTION:** Use `getAfter()` to verify
-that the corresponding tracking document *will exist* after the batch completes.
+that the corresponding tracking document _will exist_ after the batch completes.
 
 **Example:**
 

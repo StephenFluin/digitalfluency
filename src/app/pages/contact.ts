@@ -15,15 +15,17 @@ import { COMPANY } from '../company';
       <h2>Get in Touch</h2>
       <div class="card">
         <p class="name">{{ company.legalName }}</p>
-        <p>Email: <a [href]="'mailto:' + company.email">{{ company.email }}</a></p>
+        <p>
+          Email: <a [href]="'mailto:' + company.email">{{ company.email }}</a>
+        </p>
         @if (company.address) {
           <p>Mail: {{ company.address }}</p>
         }
         <p>We aim to respond to all inquiries within two business days.</p>
       </div>
       <p>
-        For billing questions, please include the email address associated with your account and
-        the date and amount of the charge.
+        For billing questions, please include the email address associated with your account and the
+        date and amount of the charge.
       </p>
     </div>
   `,

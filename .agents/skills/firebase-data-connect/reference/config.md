@@ -9,7 +9,7 @@
 - [Emulator](#emulator)
 - [Deployment](#deployment)
 
-______________________________________________________________________
+---
 
 ## Project Structure
 
@@ -26,36 +26,36 @@ project-root/
         └── mutations.gql   # Mutation operations (optional separate file)
 ```
 
-______________________________________________________________________
+---
 
 ## dataconnect.yaml
 
 Main SQL Connect service configuration:
 
 ```yaml
-specVersion: "v1"
-serviceId: "my-service"
-location: "us-central1"
+specVersion: 'v1'
+serviceId: 'my-service'
+location: 'us-central1'
 schema:
-  source: "./schema"
+  source: './schema'
   datasource:
     postgresql:
-      database: "fdcdb"
+      database: 'fdcdb'
       cloudSql:
-        instanceId: "my-instance"
-      schemaValidation: "STRICT" # or "COMPATIBLE"
-connectorDirs: ["./connector"]
+        instanceId: 'my-instance'
+      schemaValidation: 'STRICT' # or "COMPATIBLE"
+connectorDirs: ['./connector']
 ```
 
-| Field               | Description                                                                              |
-| ------------------- | ---------------------------------------------------------------------------------------- |
-| `specVersion`       | Always `"v1"`                                                                            |
-| `serviceId`         | Unique identifier for the service                                                        |
-| `location`          | GCP region (us-central1, us-east4, europe-west1, etc.)                                   |
+| Field                                           | Description                                                                              |
+| ----------------------------------------------- | ---------------------------------------------------------------------------------------- |
+| `specVersion`                                   | Always `"v1"`                                                                            |
+| `serviceId`                                     | Unique identifier for the service                                                        |
+| `location`                                      | GCP region (us-central1, us-east4, europe-west1, etc.)                                   |
 | `schema.datasource.postgresql.schemaValidation` | Deployment mode: `"STRICT"` (must match exactly) or `"COMPATIBLE"` (backward compatible) |
-| `schema.source`     | Path to schema directory                                                                 |
-| `schema.datasource` | PostgreSQL connection config                                                             |
-| `connectorDirs`     | List of connector directories                                                            |
+| `schema.source`                                 | Path to schema directory                                                                 |
+| `schema.datasource`                             | PostgreSQL connection config                                                             |
+| `connectorDirs`                                 | List of connector directories                                                            |
 
 ### Cloud SQL Configuration
 
@@ -63,29 +63,29 @@ connectorDirs: ["./connector"]
 schema:
   datasource:
     postgresql:
-      database: "my-database"      # Database name
+      database: 'my-database' # Database name
       cloudSql:
-        instanceId: "my-instance"  # Cloud SQL instance ID
+        instanceId: 'my-instance' # Cloud SQL instance ID
 ```
 
-______________________________________________________________________
+---
 
 ## connector.yaml
 
 Connector configuration and SDK generation:
 
 ```yaml
-connectorId: "default"
+connectorId: 'default'
 generate:
   javascriptSdk:
-    outputDir: "../web/src/lib/dataconnect"
-    package: "@myapp/dataconnect"
+    outputDir: '../web/src/lib/dataconnect'
+    package: '@myapp/dataconnect'
   kotlinSdk:
-    outputDir: "../android/app/src/main/kotlin/com/myapp/dataconnect"
-    package: "com.myapp.dataconnect"
+    outputDir: '../android/app/src/main/kotlin/com/myapp/dataconnect'
+    package: 'com.myapp.dataconnect'
   swiftSdk:
-    outputDir: "../ios/MyApp/DataConnect"
-    package: "DataConnectGenerated"
+    outputDir: '../ios/MyApp/DataConnect'
+    package: 'DataConnectGenerated'
 ```
 
 ### SDK Generation Options
@@ -97,7 +97,7 @@ generate:
 | `swiftSdk`      | `outputDir`, `package`                 |
 | `adminNodeSdk`  | `outputDir`, `package` (for Admin SDK) |
 
-______________________________________________________________________
+---
 
 ## Firebase CLI Commands
 
@@ -151,7 +151,7 @@ npx -y firebase-tools@latest deploy --only dataconnect:connector-id
 npx -y firebase-tools@latest deploy --only dataconnect --force
 ```
 
-______________________________________________________________________
+---
 
 ## Emulator
 
@@ -206,7 +206,7 @@ npx -y firebase-tools@latest emulators:export ./seed-data
 npx -y firebase-tools@latest emulators:start --only dataconnect --import=./seed-data
 ```
 
-______________________________________________________________________
+---
 
 ## Deployment
 
@@ -251,7 +251,7 @@ Use `--force` flag to acknowledge breaking changes during deploy.
     npx -y firebase-tools@latest deploy --only dataconnect --token ${{ secrets.FIREBASE_TOKEN }} --force
 ```
 
-______________________________________________________________________
+---
 
 ## VS Code Extension
 
